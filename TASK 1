@@ -1,0 +1,86 @@
+package TASK1;
+
+public class main {
+Product MANISH=new Product(name: "APPLE",price:100);
+    Product MANISH1=new Product(name: "APPLE",price:100);
+    Product MANISH2=new Product(name:"Orange",price;80);
+    System.out.println(MANISH.name,MANISH.price);
+    System.out.println(MANISH1.name,MANISH1.price);
+    System.out.println(MANISH2.name,MANISH2.price);
+    System.out.println(MANISH.equals(MANISH1))
+    
+
+}
+
+
+*********************************************************************************************************************
+package TASK1;
+
+import java.util.Objects;
+
+public class Product {
+    String name;
+    int price;
+
+    public Product() {
+    }
+
+    public Product(String name, int price) {
+        this.name = name;
+        this.price = price;
+
+    }
+
+    @Override
+    public String toString() {
+        return name=String.format("Name : %s @ Rs. %d");
+
+
+
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Product)) return false;
+        Product product = (Product) o;
+        return price == product.price &&
+                Objects.equals(name, product.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, price);
+    }
+}
+***************************************************************************************************************************
+TASK1_SpecialProduct.java
+package TASK1;
+
+public class SpecialProduct extends Product {
+    int regularPrice;
+    int percentageOff;
+
+    public SpecialProduct(name,price) {
+        super(name, price);
+
+    }
+
+    @Override
+    public String toString() {
+        return "TASK1.SpecialProduct{" +
+                "regularPrice=" + regularPrice +
+                ", percentageOff=" + percentageOff +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                '}';
+    }
+    public static SpecialProduct applyOffOnProduct(Product product,int percentageOff)
+    {
+       SpecialProduct product1=new SpecialProduct(product.name,discountedPrice)
+               regularPrice= product.price;
+       this.percentageOff=percentageOff;
+       return product1;
+    }
+
+}
